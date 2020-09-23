@@ -10,7 +10,6 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const PORT = process.env.PORT || 5000
 const DB_URI = process.env.DB_URI
-console.log(DB_URI)
 
 mongoose.Promise = global.Promise
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
