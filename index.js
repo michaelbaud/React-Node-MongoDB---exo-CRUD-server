@@ -6,13 +6,11 @@ const argonauteRoutes = require("./routes/argonaute")
 
 console.log('NODE_ENV:', process.env.NODE_ENV)
 
-let DB_URI = process.env.DB_URI
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
-    DB_URI = global.process.env.DB_URI
-}
+
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const PORT = process.env.PORT || 5000
+const DB_URI = process.env.DB_URI
 
 mongoose.Promise = global.Promise
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
