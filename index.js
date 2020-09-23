@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const argonauteRoutes = require("./routes/argonaute")
 
 console.log('NODE_ENV:', process.env.NODE_ENV)
-let DB_URI
+
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
     DB_URI = global.process.env.DB_URI
