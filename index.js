@@ -9,10 +9,11 @@ console.log('NODE_ENV:', process.env.NODE_ENV)
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const PORT = process.env.PORT || 5000
-const DB_URA = process.env.DB_URA
+const DB_URI = process.env.DB_URI
+console.log(DB_URI)
 
 mongoose.Promise = global.Promise
-mongoose.connect(DB_URA, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, '[Mongo DB] connection error:'))
